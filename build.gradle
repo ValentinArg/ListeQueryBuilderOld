@@ -4,9 +4,14 @@ plugins {
     id 'java'
 }
 
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
+    }
+}
+
 group = 'org.teamber.module'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
 
 configurations {
     compileOnly {
@@ -16,6 +21,13 @@ configurations {
 
 repositories {
     mavenCentral()
+}
+
+bootJar {
+    enabled = false
+}
+jar {
+    enabled = true
 }
 
 dependencies {
