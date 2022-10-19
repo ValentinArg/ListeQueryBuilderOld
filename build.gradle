@@ -47,7 +47,7 @@ tasks.named('test') {
 publishing {
     publications {
         maven(MavenPublication) {
-            artifact bootJar
+            artifact jar
         }
     }
 }
