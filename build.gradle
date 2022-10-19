@@ -12,6 +12,7 @@ java {
 
 group = 'org.teamber.module'
 version = '0.0.1-SNAPSHOT'
+apply plugin: 'maven-publish'
 
 configurations {
     compileOnly {
@@ -41,4 +42,19 @@ dependencies {
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'org.teamber.module'
+            artifactId = 'listequerybuilder'
+            version = '0.0.1-SNAPSHOT'
+            from components.java
+
+            pom {
+                description = 'A description of my library'
+            }
+        }
+    }
 }
