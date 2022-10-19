@@ -47,14 +47,7 @@ tasks.named('test') {
 publishing {
     publications {
         maven(MavenPublication) {
-            groupId = 'org.teamber.module'
-            artifactId = 'listequerybuilder'
-            version = '0.0.1-SNAPSHOT'
-            from components.java
-
-            pom {
-                description = 'A description of my library'
-            }
+            artifact bootJar
         }
     }
 }
